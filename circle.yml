@@ -1,3 +1,4 @@
 test:
   override:
+    - nvcc hellocuda.cu -o hellocuda
     - echo none
