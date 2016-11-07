@@ -1,7 +1,3 @@
-dependencies:
-  override:
-    - sudo apt-get update
-    - sudo apt-get install nvidia-cuda-toolkit
 test:
   override:
     - nvcc hellocuda.cu -o hellocuda
