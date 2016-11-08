@@ -1,4 +1,11 @@
+dependencies:
+  override:
+    - sudo apt-get update
+    - sudo apt-get install linux-image-extra-virtual
+    - wget https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda_8.0.44_linux-run
+    - curl -O http://us.download.nvidia.com/XFree86/Linux-x86_64/367.57/NVIDIA-Linux-x86_64-367.57.run
+
 test:
   override:
-    - nvcc hellocuda.cu -o hellocuda
+    - nvcc hellocuda.cu -o hellocuda -lcuda -lcudart -lcublas
     - echo none
